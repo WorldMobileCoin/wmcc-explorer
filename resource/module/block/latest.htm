@@ -22,7 +22,7 @@
 </table>
 
 <script>
-const socket = io('http://localhost:{{http_port}}');
+const socket = io('http://{{http_domain}}:{{http_port}}');
 socket.on('block', function (block) {
   const row = $(
     `<tr>
@@ -40,5 +40,8 @@ socket.on('block', function (block) {
   row.show(1000);
   $("#latest_block tr:last").hide(1000, function() { $(this).remove() });
   //socket.emit('my other event', { my: 'data' });
+});
+socket.on('error', function (err) {
+  ;
 });
 </script>
