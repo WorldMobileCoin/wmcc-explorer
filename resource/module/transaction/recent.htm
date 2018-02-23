@@ -1,0 +1,36 @@
+<a class="anchor" id="recent-txn"></a>
+<h1>Recent Transactions</h1>
+<table id='recent_txn'>
+  <tr>
+    <th>Transaction Hash</th>
+    <th>Size (bytes)</th>
+    <th>Value (wmcc)</th>
+  </tr>
+  <!--LOOP::transactions-->
+  <tr>
+    <td><a href="/tx/{{txn_hash}}">{{txn_hash}}</a></td>
+    <td>{{txn_size}}</td>
+    <td>{{txn_value}}</td>
+  </tr>
+  <!--END_LOOP-->
+</table>
+
+
+<script>
+socket.on('tx', function (tx) {
+  const row = $(
+    `<tr>
+      <td><a href="/tx/${tx.hash}">${tx.hash}</a></td>
+      <td>${tx.size}</td>
+      <td>${tx.value}</td>
+    </tr>`
+  );
+
+  row.hide();
+  $('#recent_txn tr.norecord').remove();
+  $('#recent_txn tr:first').after(row);
+  row.show(1000);
+  if ($("#recent_txn tr").length > 10)
+    $("#recent_txn tr:last").hide(1000, function() { $(this).remove() });
+});
+</script>

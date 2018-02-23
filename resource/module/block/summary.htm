@@ -1,0 +1,71 @@
+<h1>Block #{{block_height}}</h1>
+<table id="block_summary" class="summary">
+  <tr>
+    <th colspan="5">Summary</th>
+  </tr>
+  <tr>
+    <td style="position: absolute;">Number of Transactions</td>
+    <td>{{block_txn_count}}</td>
+    <td></td>
+    <td>Timestamp</td>
+    <td>{{block_txn_timestamp}}</td>
+  </tr>
+  <tr>
+    <td>Height</td>
+    <td><a href="/block/{{block_height}}">{{block_height}}</a></td>
+    <td></td>
+    <td>Total Output</td>
+    <td>{{block_output}}</td>
+  </tr>
+  <tr>
+    <td>Confirmations</td>
+    <td>{{block_confirmation}}</td>
+    <td></td>
+    <td style="position: absolute;">Transaction Fees</td>
+    <td>{{block_txn_fee}}</td>
+  </tr>
+  <tr>
+    <td>Version</td>
+    <td>{{block_version}}</td>
+    <td></td>
+    <td>Block Hash</td>
+    <td><a>{{block_hash}}</a></td>
+  </tr>
+  <tr>
+    <td>Difficulty</td>
+    <td>{{block_difficulty}}</td>
+    <td></td>
+    <td>Previous Block</td>
+    <td><a href="/block/{{block_prev}}">{{block_prev}}</a></td>
+  </tr>
+  <tr>
+    <td>Bits</td>
+    <td>{{block_bits}}</td>
+    <td></td>
+    <td>Next Block</td>
+    <td><a href="/block/{{block_next}}">{{block_next}}</a></td>
+  </tr>
+  <tr>
+    <td>Nonce</td>
+    <td>{{block_nonce}}</td>
+    <td></td>
+    <td>Merkle Root</td>
+    <td>{{block_merkle}}</td>
+  </tr>
+  <tr>
+    <td>Size</td>
+    <td>{{block_size}}</td>
+    <td></td>
+    <td>Chainwork</td>
+    <td>{{block_chainwork}}</td>
+  </tr>
+  <tr>
+    <td>Weight</td>
+    <td>{{block_weight}}</td>
+    <td></td>
+    <td colspan="2"></td>
+  </tr>
+  <!--<tr>
+    <td colspan="3"></td>
+  </tr>-->
+</table>

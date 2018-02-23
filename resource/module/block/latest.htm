@@ -1,0 +1,44 @@
+<a class="anchor" id="latest-block"></a>
+<h1>Latest Blocks</h1>
+<table id='latest_block'>
+  <tr>
+    <th>Height</th>
+    <th>Age</th>
+    <th>Transactions</th>
+    <th>Total Output (wmcc)</th>
+    <th>Size (kb)</th>
+    <th>Weight (kwu)</th>
+  </tr>
+  <!--LOOP::blocks-->
+  <tr>
+    <td><a href="/block/{{block_height}}">{{block_height}}</a></td>
+    <td class="time" value="{{block_timestamp}}">{{block_time}}</td>
+    <td>{{block_txs_length}}</td>
+    <td>{{block_output}}</td>
+    <td>{{block_size}}</td>
+    <td>{{block_weight}}</td>
+  </tr>
+  <!--END_LOOP-->
+</table>
+
+<script>
+const socket = io('http://localhost:{{http_port}}');
+socket.on('block', function (block) {
+  const row = $(
+    `<tr>
+      <td><a href="/block/${block.height}">${block.height}</a></td>
+      <td class="time" value="${block.timestamp}">${block.time}</td>
+      <td>${block.txs_length}</td>
+      <td>${block.output}</td>
+      <td>${block.size}</td>
+      <td>${block.weight}</td>
+    </tr>`
+  );
+
+  row.hide();
+  $('#latest_block tr:first').after(row);
+  row.show(1000);
+  $("#latest_block tr:last").hide(1000, function() { $(this).remove() });
+  //socket.emit('my other event', { my: 'data' });
+});
+</script>

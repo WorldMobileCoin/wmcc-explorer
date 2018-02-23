@@ -1,0 +1,40 @@
+<h1>Transaction <a>({{txn_id}})</a></h1>
+<table class="summary">
+  <tr>
+    <th colspan="5">Summary</th>
+  </tr>
+  <tr>
+    <td>Size</td>
+    <td><span>{{txn_virtual_size}} bytes</span></td>
+    <td></td>
+    <td>Total Input</td>
+    <td><span>{{txn_total_input}} wmcc</span></td>
+  </tr>
+  <tr>
+    <td>Weight</td>
+    <td><span>{{txn_weight}} bytes</span></td>
+    <td></td>
+    <td>Total Output</td>
+    <td><span>{{txn_total_output}} wmcc</span></td>
+  </tr>
+  <tr>
+    <td>Received Time</td>
+    <td><span>{{txn_date}}</span></td>
+    <td></td>
+    <td>Fees</td>
+    <td><span>{{txn_fee}} wmcc</span></td>
+  </tr>
+  <tr>
+    <td>Included In Block</td>
+    <td><span><a href="/block/{{txn_block_hash}}" title="{{txn_block_hash}}">{{txn_block_height}}</a></span></td>
+    <td></td>
+    <td>Fee per kilobyte</td>
+    <td><span>{{txn_rate}} wmcc/kb</span></td>
+  </tr>
+  <tr><td>Confirmations</td>
+    <td><span>{{txn_confirmation}}</span></td>
+    <td></td>
+    <td>Fee per weight unit</td>
+    <td><span>{{txn_wrate}} wmcc/kwu</span></td>
+  </tr>
+</table>

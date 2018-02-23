@@ -1,0 +1,18 @@
+<h2>Transactions</h2>
+<!--LOOP::transactions-->
+<table class="transaction">
+  <colgroup><col/><col/><col/></colgroup>
+  <tr>
+    <th colspan="3">
+      <a href="/tx/{{txn_id}}" class="tx{{txn_class}}" title="{{txn_title}}">{{txn_id}}</a><a class="right">{{txn_date}}</a>
+    </th>
+  </tr>
+  <tr>
+    <td>{{txn_details}}</td>
+  </tr>
+  <tr>
+    <td colspan='2'>{{txn_misc}}</td><td><span class="value">{{txn_total}}</span></td>
+  </tr>
+</table>
+<!--END_LOOP-->
+{{txn_page}}

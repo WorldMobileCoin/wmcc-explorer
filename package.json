@@ -1,0 +1,39 @@
+{
+  "name": "wmcc-explorer",
+  "version": "1.0.0-beta.1",
+  "release": "12 February 2018",
+  "productName": "wmcc-explorer",
+  "description": "WorldMobileCoin © WMCC Explorer",
+  "homepage": "https://github.com/WorldMobileCoin/wmcc-explorer",
+  "repository": "git://github.com/WorldMobileCoin/wmcc-explorer.git",
+  "bugs": {
+    "url": "https://github.com/WorldMobileCoin/wmcc-explorer/issues"
+  },
+  "author": "ParkAlter@WorldMobileCoin <worldmobilecoin@gmail.com>",
+  "main": "./lib/wmcc-explorer.js",
+  "keywords": [
+    "worldmobilecoin",
+    "wmcc-explorer",
+    "wmcc",
+    "explorer",
+    "browser",
+    "transaction",
+    "address",
+    "network",
+    "p2p",
+    "cryptocurrency",
+    "blockchain"
+  ],
+  "dependencies": {
+    "express": "*"
+  },
+  "devDependencies": {
+    "uglifyjs-webpack-plugin": "1.1.2",
+    "webpack": "3.10.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "webpack-explorer": "webpack --config webpack.explorer.js",
+    "webpack-explorer-compressed": "webpack --config webpack.explorer-compressed.js"
+  }
+}

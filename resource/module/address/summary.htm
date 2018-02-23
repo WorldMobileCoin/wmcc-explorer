@@ -1,0 +1,32 @@
+<wrapper>
+  <h1>Address <a>({{address}})</a></h1>
+  <table class="summary address">
+    <tr>
+      <th colspan="5">Summary</th>
+    </tr>
+    <tr>
+      <td>Number of Transactions</td>
+      <td><span>{{address_txn_length}}</span></td>
+      <td></td>
+      <td>Total Received</td>
+      <td><span>{{address_received}} wmcc</span></td>
+    </tr>
+    <tr>
+      <td>Address Hash 160</td>
+      <td><span class='address'>{{address_hash}}</span></td>
+      <td></td>
+      <td>Final Balance</td>
+      <td><span>{{address_balance}} wmcc</span></td>
+    </tr>
+  </table>
+  <!--<img src="{{address_qr}}"/>-->
+  <div id="address_qr"></div>
+  <clearfix></clearfix>
+</wrapper>
+<script type="text/javascript">
+  $(function(){ 
+    const qrcode = $('<div id="qrcode"></div>').qrcode('{{address}}');
+    const qrimg = qrcode[0].childNodes[0].toDataURL("image/png");
+    $('#address_qr').html(`<img src="${qrimg}"/>`);
+  });
+</script>
